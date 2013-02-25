@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+	<script type="text/javascript" src="PieChart.js"></script>
+	<script type="text/javascript">
+		var g_chart;
+		function draw() {
+			var _data = {
+				"id" : "myCanvas",
+				"data" : [
+					{"label" : "Medicine Items Sell",
+					"val" : 80,
+					"color" : ["#151B8D", "#FFFFFF"]},
+					{"label" : "Raw Meat Items Sell",
+					"val" : 60,
+					"color" : ["#F87431", "#FFFFFF"]},
+					{"label" : "Kitchen Items Sell",
+					"val" : 120,
+					"color" : ["#6D7B8D", "#FFFFFF"]},
+					{"label" : "Dress Material Sell",
+					"val" : 20,
+					"color" : ["#806D7E", "#FFFFFF"]},
+					{"label" : "Furniture Sell",
+					"val" : 117,
+					"color" : ["#9172EC", "#FFFFFF"]},
+					{"label" : "Toys And Sports Items Sell",
+					"val" : 101,
+					"color" : ["#C031C7", "#FFFFFF"]},
+					{"label" : "Food Items Sell",
+					"val" : 70,
+					"color" : ["#808000", "#FFFFFF"]}
+				],
+				"fill_style" : "gradient",
+				"values" : {
+					"visible" : true,
+					"color" : "#806D7E"
+				},
+				"slice_shadow" : {
+					"visible" : true,
+					"color" : "#000000"
+				},
+				"animate" : true,
+				"legend" : {
+					"visible" : true,
+					"position": "e",
+					"width" : 220,
+					"colorbandwidth" : 20,
+					"itempadding" : 2
+				},
+				"drawoninit" : true,
+				"onpulloutcomplete" : function (prm_obj) {
+					alert(prm_obj["label"]);
+				}/*,
+				"onclick" : function (prm_obj) {
+					alert(prm_obj["label"]);
+				}*/
+			};
+
+			g_chart = new PieChart(_data, true);
+			//g_chart.drawChart();
+		}
+	</script>
+  </head>
+  <body onload="draw()">
+    <canvas id="myCanvas" width="660" height="400" onclick="g_chart.handleClick(event, this)"></canvas>
+  </body>
+</html>
