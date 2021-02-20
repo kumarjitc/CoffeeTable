@@ -1,0 +1,27 @@
+<!--
+  Form: Image Upload Form
+  Inputs: 
+    # Image file
+    # Thumb nail width
+    # Thumb nail height
+-->
+<html>
+  <head>
+    <title>Image Upload Form</title>
+  </head>
+  <body>
+    <form action="requestHandler.php" method="post" enctype="multipart/form-data">
+      <!-- Width -->
+      <label for="imgWidth">Width(In Pixels):</label>
+      <input type="text" name="imgWidth" id="imgWidth"><br>
+      <!-- Height -->
+      <label for="imgHeight">Height(In Pixels):</label>
+      <input type="text" name="imgHeight" id="imgHeight"><br>
+      <!-- File -->
+      <label for="imgFile">Filename:</label>
+      <input type="file" name="imgFile" id="imgFile"><br>
+      <!-- Submit -->
+      <input type="submit" name="submit" value="Submit">
+    </form>
+  </body>
+</html>
