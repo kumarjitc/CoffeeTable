@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Line Chart Demo</title>
+    <script type="text/javascript" src="MeterChart.js"></script>
+    <script type="text/javascript">
+		function draw () {
+			var _meter = new MeterChart({
+				"animate" : true,
+				"increment_length" : 5,
+				"fill_style" : "pattern",
+				"max_height" : 20,
+				"max_length" : 500,
+				"data" : [
+					{"id" : "cnv1", "value" : 600, 'fill_img' : "patternImage.png"},
+					{"id" : "cnv2", "value" : 200, 'fill_img' : "patternImage1.png"},
+					{"id" : "cnv3", "value" : 450, 'fill_img' : "patternImage2.png"}
+				],
+	       		"draw_oninit" : true
+			});
+		}
+    </script>
+</head>
+<body style="margin-left:50px;margin-top:50px;" onload="draw()">
+    <table>
+		<tr>
+			<td>
+				<canvas id="cnv1" width="500" height="20"></canvas>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<canvas id="cnv2" width="500" height="20"></canvas>
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<canvas id="cnv3" width="500" height="20"></canvas>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
